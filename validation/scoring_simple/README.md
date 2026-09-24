@@ -14,6 +14,18 @@ Le smoke test joue six combats complets (solo, éleveur, team, deux orientations
 
 L'ancienne suite Astra, spécifique aux profils supprimés, reste disponible au commit `638f0ad`.
 
+## Coefficient de force et équipement
+
+La sonde dédiée accepte directement le dépôt d'IA séparé, sans recopier les outils dedans :
+
+```sh
+python validation/scoring_simple/equipment.py --ai-root <depot-Leekwars-AI> --runtime <repertoire-separe> --output validation/scoring_simple/results/equipment.json
+```
+
+Elle vérifie 22 assertions dans le générateur : valeurs calculées à la main pour plusieurs armes et puces, addition des impacts d'un cast, choix du meilleur item, profils de cibles et exclusion des dégâts sur soi, absence de valeur de force pour le soin/poison/Châtiment, plancher à zéro, indépendance des autres statistiques et cache. Deux assertions couvrent le partage d'un ID par une invocation virtuelle et un porteur réel.
+
+Le 24 septembre 2026 : 22/22 passent, aucune erreur ni tour avorté. Pour un inventaire de 26 items, le premier appel de `Coefficients.strength` coûte 1 087 opérations, puis 20 sur une lecture en cache (instrumentation identique pour les deux). La suite d'intégration et les six combats complets ont aussi été rejoués ; les rapports portent le préfixe `equipment-`. Ces contrôles vérifient le fonctionnement, pas un gain de winrate.
+
 ## Réception du 23 septembre 2026
 
 - 85 mutations de statistiques : aucun écart entre score incrémental et complet.

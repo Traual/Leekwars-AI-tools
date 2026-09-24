@@ -1,0 +1,100 @@
+// Assertions dans une VM du générateur, hors du bundle de production.
+include("includes.leek")
+
+global EQUIPMENT_PROBE_ID = -100
+
+class EquipmentProbe {
+    static check(name, actual, expected) {
+        debug("EQUIPMENT_TEST " + jsonEncode(["test": name, "ok": abs(actual - expected) < 0.000001,
+            "actual": actual, "expected": expected]))
+    }
+
+    static withKit(source, inventory) {
+        var stat = clone(source, 1)
+        stat.ID = EQUIPMENT_PROBE_ID--
+        stat.INVENTORY = inventory
+        return stat
+    }
+
+    static run() {
+        Preload.InitEverything()
+        ReloadCacheNewTurn()
+        Preload.InitStateClass()
+        var source = StateClass.Virtualize()[Me]
+        // Valeurs calculées à la main depuis le catalogue (min/max exposés par l'API).
+        check("pistolet 15-20 / 3 PT", Coefficients.strength(withKit(source, [WEAPON_PISTOL])), 7 / 12)
+        check("mitraillette 3 fois 10-15 / 4 PT", Coefficients.strength(withKit(source, [WEAPON_MACHINE_GUN])), 0.9375)
+        check("meilleur item et non somme", Coefficients.strength(withKit(source, [WEAPON_PISTOL, WEAPON_MACHINE_GUN])), 0.9375)
+        check("puce etincelle 8-16 / 3 PT", Coefficients.strength(withKit(source, [CHIP_SPARK])), 0.4)
+        check("arme et puce dans le meme inventaire", Coefficients.strength(withKit(source, [CHIP_SPARK, WEAPON_KATANA])), 1.1)
+        check("zone sur une cible seulement", Coefficients.strength(withKit(source, [CHIP_ROCKFALL])), 1.08)
+        check("inventaire vide", Coefficients.strength(withKit(source, [])), 0)
+        var support = withKit(source, [CHIP_PUNISHMENT, CHIP_TOXIN, CHIP_BANDAGE])
+        check("chatiment poison soin sans force", Coefficients.strength(support), 0)
+        check("zero effectivement memorise", (support.ID * 2 in EQUIPMENT_STRENGTH_YIELD) ? 1 : 0, 1)
+
+        // Fixture de masque : 80 sur poireau, 40 sur invocation, 20 communs -> max = 100,
+        // jamais 140. Les trois lignes à 1000 visent alliés, lanceur, ou ON_CASTER.
+        var item = clone(ITEMINFO[WEAPON_PISTOL], 1)
+        item.COST = 4
+        var both = EFFECT_TARGET_NON_SUMMONS | EFFECT_TARGET_SUMMONS
+        item.EFFECTS = [
+            [EFFECT_DAMAGE, 80, 80, 0, EFFECT_TARGET_ENEMIES | EFFECT_TARGET_NON_SUMMONS, 0],
+            [EFFECT_DAMAGE, 40, 40, 0, EFFECT_TARGET_ENEMIES | EFFECT_TARGET_SUMMONS, 0],
+            [EFFECT_DAMAGE, 20, 20, 0, EFFECT_TARGET_ENEMIES | both, 0],
+            [EFFECT_DAMAGE, 1000, 1000, 0, EFFECT_TARGET_ALLIES | both, 0],
+            [EFFECT_DAMAGE, 1000, 1000, 0, EFFECT_TARGET_CASTER | both, 0],
+            [EFFECT_DAMAGE, 1000, 1000, 0, EFFECT_TARGET_ENEMIES | both, EFFECT_MODIFIER_ON_CASTER]
+        ]
+        ITEMINFO[-999] = item
+        check("profils exclusifs et degats sur soi", Coefficients.strength(withKit(source, [-999])), 2.5)
+        mapRemove(ITEMINFO, -999)
+
+        var stat = withKit(source, [WEAPON_KATANA])
+        stat.STRENGTH = 100
+        var before = ScoringClass.entityValue(stat)
+        stat.STRENGTH = 200
+        check("100 force supplementaire", ScoringClass.entityValue(stat) - before, 110)
+        stat.STRENGTH = 400
+        before = ScoringClass.entityValue(stat)
+        stat.STRENGTH = 500
+        check("meme gain quelle que soit la force positive", ScoringClass.entityValue(stat) - before, 110)
+        stat.STRENGTH = -20
+        before = ScoringClass.entityValue(stat)
+        stat.STRENGTH = -10
+        check("force negative sous le plancher", ScoringClass.entityValue(stat) - before, 0)
+        stat.STRENGTH = 50
+        check("franchissement du zero", ScoringClass.entityValue(stat) - before, 55)
+        before = ScoringClass.entityValue(stat)
+        stat.LIFE -= 100
+        check("degats deja simules comptes une seule fois", ScoringClass.entityValue(stat) - before, -100)
+        stat.TP = 0
+        stat.TOTAL_TP = 40
+        stat.POWER = 400
+        stat.WISDOM = 1000
+        check("coefficient independant des autres stats", Coefficients.strength(stat), 1.1)
+
+        // Même ID, mais classes différentes : cas d'un vrai summon après une simulation.
+        var virtual = new BulbState(stat.ID, 1, CHIP_PUNY_BULB, source.CELL, source.ID, source, 0, false)
+        virtual.INVENTORY = [CHIP_BANDAGE]
+        check("invocation virtuelle isolee du vrai porteur", Coefficients.strength(virtual), 0)
+        check("vrai porteur preserve apres invocation virtuelle", Coefficients.strength(stat), 1.1)
+
+        var measured = withKit(source, source.INVENTORY)
+        var start = getOperations()
+        var cold = Coefficients.strength(measured)
+        var coldOps = getOperations() - start
+        start = getOperations()
+        var warm = Coefficients.strength(measured)
+        var warmOps = getOperations() - start
+        check("lecture cachee identique", warm, cold)
+        check("lecture cachee moins chere", warmOps < coldOps ? 1 : 0, 1)
+        debug("EQUIPMENT_COST " + jsonEncode(["first": coldOps, "cached": warmOps, "items": count(measured.INVENTORY)]))
+        ReloadCacheNewTurn()
+        check("reset au debut du tour", mapSize(EQUIPMENT_STRENGTH_YIELD), 0)
+        stat.INVENTORY = [CHIP_BANDAGE]
+        check("identifiant reutilise au tour suivant", Coefficients.strength(stat), 0)
+    }
+}
+
+EquipmentProbe.run()

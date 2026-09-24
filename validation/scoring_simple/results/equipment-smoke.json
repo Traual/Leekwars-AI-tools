@@ -1,0 +1,651 @@
+{
+  "bundle": "full-876b118ce016fd",
+  "baseline": "3024424",
+  "builds_sha256": "07d86b426774c3006654e32aae215a47d70d55606393660c1f27ad85094a8846",
+  "engine_sha256": "55157273f535bb3dd806e90a4dff263d61b2cac9c5888cba1de8372cd344a2e8",
+  "seconds": 37.85068225860596,
+  "rows": [
+    {
+      "format": "solo",
+      "block": 0,
+      "mirror": false,
+      "winner": 1,
+      "candidate_team": 1,
+      "duration": 7,
+      "entities": [
+        {
+          "id": 0,
+          "candidate": true,
+          "summon": false,
+          "turns": 7,
+          "operations": 11419456,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": false,
+          "summon": false,
+          "turns": 6,
+          "operations": 13380648,
+          "aborts": 0
+        },
+        {
+          "id": 2,
+          "candidate": false,
+          "summon": true,
+          "turns": 5,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          20
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "format": "solo",
+      "block": 0,
+      "mirror": true,
+      "winner": 1,
+      "candidate_team": 2,
+      "duration": 15,
+      "entities": [
+        {
+          "id": 0,
+          "candidate": false,
+          "summon": false,
+          "turns": 15,
+          "operations": 21793736,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": true,
+          "summon": false,
+          "turns": 14,
+          "operations": 24767013,
+          "aborts": 0
+        },
+        {
+          "id": 2,
+          "candidate": true,
+          "summon": true,
+          "turns": 14,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 3,
+          "candidate": true,
+          "summon": true,
+          "turns": 7,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          20
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "format": "farmer",
+      "block": 0,
+      "mirror": false,
+      "winner": 1,
+      "candidate_team": 1,
+      "duration": 9,
+      "entities": [
+        {
+          "id": 5,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 49047200,
+          "aborts": 0
+        },
+        {
+          "id": 0,
+          "candidate": true,
+          "summon": false,
+          "turns": 9,
+          "operations": 10627788,
+          "aborts": 0
+        },
+        {
+          "id": 4,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 16057098,
+          "aborts": 0
+        },
+        {
+          "id": 2,
+          "candidate": true,
+          "summon": false,
+          "turns": 7,
+          "operations": 11261112,
+          "aborts": 0
+        },
+        {
+          "id": 7,
+          "candidate": false,
+          "summon": false,
+          "turns": 8,
+          "operations": 14104433,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": true,
+          "summon": false,
+          "turns": 5,
+          "operations": 10575320,
+          "aborts": 0
+        },
+        {
+          "id": 6,
+          "candidate": false,
+          "summon": false,
+          "turns": 8,
+          "operations": 12952946,
+          "aborts": 0
+        },
+        {
+          "id": 3,
+          "candidate": true,
+          "summon": false,
+          "turns": 2,
+          "operations": 5560990,
+          "aborts": 0
+        },
+        {
+          "id": 8,
+          "candidate": true,
+          "summon": true,
+          "turns": 9,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 9,
+          "candidate": true,
+          "summon": true,
+          "turns": 3,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 10,
+          "candidate": true,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 11,
+          "candidate": true,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 12,
+          "candidate": true,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          20,
+          20,
+          18,
+          18
+        ]
+      ]
+    },
+    {
+      "format": "farmer",
+      "block": 0,
+      "mirror": true,
+      "winner": 1,
+      "candidate_team": 2,
+      "duration": 11,
+      "entities": [
+        {
+          "id": 5,
+          "candidate": true,
+          "summon": false,
+          "turns": 11,
+          "operations": 75560755,
+          "aborts": 0
+        },
+        {
+          "id": 0,
+          "candidate": false,
+          "summon": false,
+          "turns": 10,
+          "operations": 12317588,
+          "aborts": 0
+        },
+        {
+          "id": 4,
+          "candidate": true,
+          "summon": false,
+          "turns": 10,
+          "operations": 18476707,
+          "aborts": 0
+        },
+        {
+          "id": 2,
+          "candidate": false,
+          "summon": false,
+          "turns": 10,
+          "operations": 14595152,
+          "aborts": 0
+        },
+        {
+          "id": 7,
+          "candidate": true,
+          "summon": false,
+          "turns": 10,
+          "operations": 13790549,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": false,
+          "summon": false,
+          "turns": 7,
+          "operations": 8386049,
+          "aborts": 0
+        },
+        {
+          "id": 6,
+          "candidate": true,
+          "summon": false,
+          "turns": 10,
+          "operations": 18892753,
+          "aborts": 0
+        },
+        {
+          "id": 3,
+          "candidate": false,
+          "summon": false,
+          "turns": 2,
+          "operations": 5297054,
+          "aborts": 0
+        },
+        {
+          "id": 8,
+          "candidate": false,
+          "summon": true,
+          "turns": 9,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 9,
+          "candidate": false,
+          "summon": true,
+          "turns": 3,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 10,
+          "candidate": false,
+          "summon": true,
+          "turns": 5,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 11,
+          "candidate": false,
+          "summon": true,
+          "turns": 2,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 12,
+          "candidate": false,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          20,
+          20,
+          18,
+          18
+        ]
+      ]
+    },
+    {
+      "format": "team",
+      "block": 0,
+      "mirror": false,
+      "winner": 0,
+      "candidate_team": 1,
+      "duration": 10,
+      "entities": [
+        {
+          "id": 2,
+          "candidate": true,
+          "summon": false,
+          "turns": 10,
+          "operations": 33559344,
+          "aborts": 0
+        },
+        {
+          "id": 4,
+          "candidate": false,
+          "summon": false,
+          "turns": 5,
+          "operations": 6756463,
+          "aborts": 0
+        },
+        {
+          "id": 0,
+          "candidate": true,
+          "summon": false,
+          "turns": 10,
+          "operations": 32409996,
+          "aborts": 0
+        },
+        {
+          "id": 6,
+          "candidate": false,
+          "summon": false,
+          "turns": 6,
+          "operations": 78938017,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": true,
+          "summon": false,
+          "turns": 9,
+          "operations": 53179918,
+          "aborts": 0
+        },
+        {
+          "id": 7,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 78004262,
+          "aborts": 0
+        },
+        {
+          "id": 3,
+          "candidate": true,
+          "summon": false,
+          "turns": 9,
+          "operations": 23153639,
+          "aborts": 0
+        },
+        {
+          "id": 5,
+          "candidate": false,
+          "summon": false,
+          "turns": 3,
+          "operations": 5126509,
+          "aborts": 0
+        },
+        {
+          "id": 8,
+          "candidate": true,
+          "summon": true,
+          "turns": 10,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 9,
+          "candidate": false,
+          "summon": true,
+          "turns": 3,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 10,
+          "candidate": true,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 11,
+          "candidate": true,
+          "summon": true,
+          "turns": 5,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 12,
+          "candidate": true,
+          "summon": true,
+          "turns": 3,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 13,
+          "candidate": true,
+          "summon": true,
+          "turns": 2,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 14,
+          "candidate": true,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          5,
+          8,
+          18,
+          15
+        ],
+        [
+          4,
+          4,
+          18,
+          15
+        ]
+      ]
+    },
+    {
+      "format": "team",
+      "block": 0,
+      "mirror": true,
+      "winner": 0,
+      "candidate_team": 2,
+      "duration": 9,
+      "entities": [
+        {
+          "id": 2,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 25299789,
+          "aborts": 0
+        },
+        {
+          "id": 4,
+          "candidate": true,
+          "summon": false,
+          "turns": 3,
+          "operations": 3290247,
+          "aborts": 0
+        },
+        {
+          "id": 0,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 22562329,
+          "aborts": 0
+        },
+        {
+          "id": 6,
+          "candidate": true,
+          "summon": false,
+          "turns": 6,
+          "operations": 61531817,
+          "aborts": 0
+        },
+        {
+          "id": 1,
+          "candidate": false,
+          "summon": false,
+          "turns": 9,
+          "operations": 43227133,
+          "aborts": 0
+        },
+        {
+          "id": 7,
+          "candidate": true,
+          "summon": false,
+          "turns": 8,
+          "operations": 60825169,
+          "aborts": 0
+        },
+        {
+          "id": 3,
+          "candidate": false,
+          "summon": false,
+          "turns": 8,
+          "operations": 17823611,
+          "aborts": 0
+        },
+        {
+          "id": 5,
+          "candidate": true,
+          "summon": false,
+          "turns": 3,
+          "operations": 5611052,
+          "aborts": 0
+        },
+        {
+          "id": 8,
+          "candidate": false,
+          "summon": true,
+          "turns": 9,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 9,
+          "candidate": true,
+          "summon": true,
+          "turns": 3,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 10,
+          "candidate": false,
+          "summon": true,
+          "turns": 2,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 11,
+          "candidate": false,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 12,
+          "candidate": false,
+          "summon": true,
+          "turns": 2,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 13,
+          "candidate": false,
+          "summon": true,
+          "turns": 2,
+          "operations": 0,
+          "aborts": 0
+        },
+        {
+          "id": 14,
+          "candidate": false,
+          "summon": true,
+          "turns": 1,
+          "operations": 0,
+          "aborts": 0
+        }
+      ],
+      "errors": [],
+      "cores": [
+        [
+          5,
+          8,
+          18,
+          15
+        ],
+        [
+          4,
+          4,
+          18,
+          15
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "bundle": "equipment-probe-876b118ce016fd",
+  "checks": [
+    {
+      "actual": 0.5833333333333334,
+      "expected": 0.5833333333333334,
+      "ok": true,
+      "test": "pistolet 15-20 / 3 PT"
+    },
+    {
+      "actual": 0.9375,
+      "expected": 0.9375,
+      "ok": true,
+      "test": "mitraillette 3 fois 10-15 / 4 PT"
+    },
+    {
+      "actual": 0.9375,
+      "expected": 0.9375,
+      "ok": true,
+      "test": "meilleur item et non somme"
+    },
+    {
+      "actual": 0.4,
+      "expected": 0.4,
+      "ok": true,
+      "test": "puce etincelle 8-16 / 3 PT"
+    },
+    {
+      "actual": 1.1,
+      "expected": 1.1,
+      "ok": true,
+      "test": "arme et puce dans le meme inventaire"
+    },
+    {
+      "actual": 1.08,
+      "expected": 1.08,
+      "ok": true,
+      "test": "zone sur une cible seulement"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0,
+      "ok": true,
+      "test": "inventaire vide"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0,
+      "ok": true,
+      "test": "chatiment poison soin sans force"
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "ok": true,
+      "test": "zero effectivement memorise"
+    },
+    {
+      "actual": 2.5,
+      "expected": 2.5,
+      "ok": true,
+      "test": "profils exclusifs et degats sur soi"
+    },
+    {
+      "actual": 110.0,
+      "expected": 110,
+      "ok": true,
+      "test": "100 force supplementaire"
+    },
+    {
+      "actual": 110.0,
+      "expected": 110,
+      "ok": true,
+      "test": "meme gain quelle que soit la force positive"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0,
+      "ok": true,
+      "test": "force negative sous le plancher"
+    },
+    {
+      "actual": 55.0,
+      "expected": 55,
+      "ok": true,
+      "test": "franchissement du zero"
+    },
+    {
+      "actual": -100.0,
+      "expected": -100,
+      "ok": true,
+      "test": "degats deja simules comptes une seule fois"
+    },
+    {
+      "actual": 1.1,
+      "expected": 1.1,
+      "ok": true,
+      "test": "coefficient independant des autres stats"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0,
+      "ok": true,
+      "test": "invocation virtuelle isolee du vrai porteur"
+    },
+    {
+      "actual": 1.1,
+      "expected": 1.1,
+      "ok": true,
+      "test": "vrai porteur preserve apres invocation virtuelle"
+    },
+    {
+      "actual": 1.1,
+      "expected": 1.1,
+      "ok": true,
+      "test": "lecture cachee identique"
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "ok": true,
+      "test": "lecture cachee moins chere"
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "ok": true,
+      "test": "reset au debut du tour"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0,
+      "ok": true,
+      "test": "identifiant reutilise au tour suivant"
+    }
+  ],
+  "costs": [
+    {
+      "cached": 20,
+      "first": 1087,
+      "items": 26
+    }
+  ],
+  "errors": [],
+  "aborts": [],
+  "engine_sha256": "55157273f535bb3dd806e90a4dff263d61b2cac9c5888cba1de8372cd344a2e8",
+  "diagnostic_cores": 100
+}
